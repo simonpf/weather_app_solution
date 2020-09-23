@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>The weather_app module &#8212; weather_app 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <span class="target" id="module-weather_app"></span><div class="section" id="the-weather-app-module">
+<h1>The weather_app module<a class="headerlink" href="#the-weather-app-module" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">weather_app</span></code> module provides a high-level interface to the SMHI forecast.
+The module currently provides function to access the temperature and the
+precipitation forecast data. Accessing the weather forecast requires an active
+internet connection. The forecast location is determined automatically based on
+location lookup of the internet access point.</p>
+<p>Since SMHI doesn’t provide weather forecasts outside of Sweden through their web
+API, request from outside of Sweden use Gothenburg as location.</p>
+<dl class="function">
+<dt id="weather_app.get_precipitation_forecast">
+<code class="sig-prename descclassname">weather_app.</code><code class="sig-name descname">get_precipitation_forecast</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#weather_app.get_precipitation_forecast" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve current SMHI predicted precipitation .</p>
+<p>Linearly interpolates the current SMHI precipitation forecast to the
+given array of lead times. Precipitation here includes rain, snow, graupel
+or hail.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>hours</strong> (<em>array</em>) – 1D array containing the lead times in hours for which
+to compute the precipitation.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Array containing the predicted temperatures.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="weather_app.get_temperature_forecast">
+<code class="sig-prename descclassname">weather_app.</code><code class="sig-name descname">get_temperature_forecast</code><span class="sig-paren">(</span><em class="sig-param">hours</em><span class="sig-paren">)</span><a class="headerlink" href="#weather_app.get_temperature_forecast" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve current SMHI predicted temperatures.</p>
+<p>Linearly interpolates the current SMHI temperature forecast to the
+given array of lead times.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>hours</strong> (<em>array</em>) – 1D array containing the lead times in hours for which
+to compute the temperature.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Array containing the predicted temperatures.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">weather_app</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Simon Pfreundschuh.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/api/weather_app.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

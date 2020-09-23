@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>The weather_app.render module &#8212; weather_app 0.0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <span class="target" id="module-weather_app.render"></span><div class="section" id="the-weather-app-render-module">
+<h1>The weather_app.render module<a class="headerlink" href="#the-weather-app-render-module" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="code docutils literal notranslate"><span class="pre">wether_app.render</span></code> module provides functionality to render weather
+forecast data as ASCII plots. All functionality is implemented by the
+AsciiGraph class.</p>
+<dl class="class">
+<dt id="weather_app.render.AsciiGraph">
+<em class="property">class </em><code class="sig-prename descclassname">weather_app.render.</code><code class="sig-name descname">AsciiGraph</code><span class="sig-paren">(</span><em class="sig-param">height=40</em>, <em class="sig-param">color=True</em><span class="sig-paren">)</span><a class="headerlink" href="#weather_app.render.AsciiGraph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Drawing graphs as ASCII string.</p>
+<p>The AsciiGraph class represents a graph to be rendered to a string
+using ASCII characters.</p>
+<dl class="attribute">
+<dt id="weather_app.render.AsciiGraph.height">
+<code class="sig-name descname">height</code><a class="headerlink" href="#weather_app.render.AsciiGraph.height" title="Permalink to this definition">¶</a></dt>
+<dd><p>The height of the plot in lines.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="weather_app.render.AsciiGraph.color">
+<code class="sig-name descname">color</code><a class="headerlink" href="#weather_app.render.AsciiGraph.color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether or not to use BASH color codes in output.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>Boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="weather_app.render.AsciiGraph.grid">
+<code class="sig-name descname">grid</code><a class="headerlink" href="#weather_app.render.AsciiGraph.grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Numpy array containing the characters for each
+position in the panel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="weather_app.render.AsciiGraph.I_ZERO">
+<code class="sig-name descname">I_ZERO</code><a class="headerlink" href="#weather_app.render.AsciiGraph.I_ZERO" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grid index corresponding to 0 on the y-axis.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="weather_app.render.AsciiGraph.I_MAX">
+<code class="sig-name descname">I_MAX</code><a class="headerlink" href="#weather_app.render.AsciiGraph.I_MAX" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grid index corresponding the maximum y-value.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="weather_app.render.AsciiGraph.J_ZERO">
+<code class="sig-name descname">J_ZERO</code><a class="headerlink" href="#weather_app.render.AsciiGraph.J_ZERO" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grid index corresponding to 0 on the x-axis.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="weather_app.render.AsciiGraph.J_MAX">
+<code class="sig-name descname">J_MAX</code><a class="headerlink" href="#weather_app.render.AsciiGraph.J_MAX" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grid index corresponding the maximum x-value.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="weather_app.render.AsciiGraph.add_precipitation_plot">
+<code class="sig-name descname">add_precipitation_plot</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#weather_app.render.AsciiGraph.add_precipitation_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add precipitation plot to the graph.</p>
+<p>Draws the given precipitation sequence into the plot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>array</em>) – 1D array containing the x coordinates of the sequence.</p></li>
+<li><p><strong>y</strong> (<em>array</em>) – 1D array containing the corresponding precipitation.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="weather_app.render.AsciiGraph.add_temperature_plot">
+<code class="sig-name descname">add_temperature_plot</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#weather_app.render.AsciiGraph.add_temperature_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add temperature plot to the graph.</p>
+<p>Draws the given temperature sequence into the plot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>array</em>) – 1D array containing the x coordinates of the sequence.</p></li>
+<li><p><strong>y</strong> (<em>array</em>) – 1D array containing the corresponding temperatures.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="weather_app.render.AsciiGraph.precipitation_marker">
+<em class="property">property </em><code class="sig-name descname">precipitation_marker</code><a class="headerlink" href="#weather_app.render.AsciiGraph.precipitation_marker" title="Permalink to this definition">¶</a></dt>
+<dd><p>The marker (including color codes) used to draw precipitation.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="weather_app.render.AsciiGraph.render">
+<code class="sig-name descname">render</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#weather_app.render.AsciiGraph.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints the resulting graph to the standard out.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="weather_app.render.AsciiGraph.set_time_range">
+<code class="sig-name descname">set_time_range</code><span class="sig-paren">(</span><em class="sig-param">t0</em>, <em class="sig-param">t1</em><span class="sig-paren">)</span><a class="headerlink" href="#weather_app.render.AsciiGraph.set_time_range" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the x-axis range of the plot.</p>
+<p>This draws x-labels onto the plot according the given start and end times
+of the plotted sequences.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>t0</strong> (<em>datetime</em>) – The time to associate with the leftmost column of
+the plot.</p></li>
+<li><p><strong>t1</strong> (<em>datetime</em>) – The time to associate with the rightmost column of
+the plot.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="weather_app.render.AsciiGraph.temperature_marker">
+<em class="property">property </em><code class="sig-name descname">temperature_marker</code><a class="headerlink" href="#weather_app.render.AsciiGraph.temperature_marker" title="Permalink to this definition">¶</a></dt>
+<dd><p>The marker (including color codes) used to draw temperatures.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">weather_app</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Simon Pfreundschuh.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 2.4.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/api/render.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
